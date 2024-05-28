@@ -14,6 +14,10 @@ dependencies:
 
   # Splash Screen
   flutter_native_splash: ^2.4.0
+  # For a responsive UI
+  flutter_screenutil: ^5.9.1
+  # An SVG rendering and widget library for Flutter, which allows painting 
+  flutter_svg: ^2.0.10+1
   # State Management
   flutter_bloc: ^8.1.5
   # Code Generator for (cubit and retrofit)
@@ -46,6 +50,8 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/svgs/
+
   # fonts:
   #   - family: Schyler
   #     fonts:

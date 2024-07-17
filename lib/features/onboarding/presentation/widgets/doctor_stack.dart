@@ -16,7 +16,7 @@ class DoctorStack extends StatelessWidget {
           AppAssets.backgroundLogo,
         ),
         Image.asset(
-          AppAssets.onboardingDocImage,
+          AppAssets.onboardingDoctorImage,
           width: double.infinity,
         ),
         Container(

@@ -7,11 +7,13 @@ class AppText {
     fontSize: 32.sp,
     fontWeight: FontWeight.bold,
     color: AppColors.mainBlue,
+    fontFamily: 'Inter',
   );
   static TextStyle greyReg12 = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.grey,
+    fontFamily: 'Inter',
   );
 
   /// Default TextStyle for `MainButton`'s Text
@@ -19,5 +21,6 @@ class AppText {
     fontSize: 16.sp,
     fontWeight: FontWeight.w600,
     color: Colors.white,
+    fontFamily: 'Inter',
   );
 }

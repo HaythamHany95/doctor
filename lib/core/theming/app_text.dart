@@ -15,6 +15,18 @@ class AppText {
     color: AppColors.mainBlue,
     fontFamily: 'Inter',
   );
+  static TextStyle blackMed14 = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+    fontFamily: 'Inter',
+  );
+  static TextStyle greyMed14 = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.lightGrey,
+    fontFamily: 'Inter',
+  );
   static TextStyle greyReg12 = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,

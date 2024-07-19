@@ -1,4 +1,5 @@
 import 'package:doctor/core/theming/app_text.dart';
+import 'package:doctor/features/login/presentation/widgets/auth_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,7 +26,9 @@ class LoginScreen extends StatelessWidget {
                     Text(
                       "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
                       style: AppText.greyReg14,
-                    )
+                    ),
+                    AuthTextField(hintText: "Email"),
+                    AuthTextField(hintText: "Password"),
                   ],
                 ),
               ),

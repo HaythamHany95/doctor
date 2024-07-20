@@ -38,10 +38,13 @@ class OnboardingScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            MainButton(
-              label: "Get Started",
-              onPressed: () => context.pushNamed(
-                Routes.loginScreen,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 5.h),
+              child: MainButton(
+                label: "Get Started",
+                onPressed: () => context.pushNamed(
+                  Routes.loginScreen,
+                ),
               ),
             )
           ],

@@ -9,8 +9,50 @@ class AppText {
     color: AppColors.mainBlue,
     fontFamily: 'Inter',
   );
+  static TextStyle blueBold24 = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.bold,
+    color: AppColors.mainBlue,
+    fontFamily: 'Inter',
+  );
+  static TextStyle blueSemi14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.mainBlue,
+    fontFamily: 'Inter',
+  );
+  static TextStyle blackBold12 = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.mainBlue,
+    fontFamily: 'Inter',
+  );
+  static TextStyle blackReg14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+    color: Colors.black,
+    fontFamily: 'Inter',
+  );
+  static TextStyle blackMed14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+    fontFamily: 'Inter',
+  );
+  static TextStyle greyMed14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.lightGrey,
+    fontFamily: 'Inter',
+  );
   static TextStyle greyReg12 = TextStyle(
     fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.grey,
+    fontFamily: 'Inter',
+  );
+  static TextStyle greyReg14 = TextStyle(
+    fontSize: 14.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.grey,
     fontFamily: 'Inter',

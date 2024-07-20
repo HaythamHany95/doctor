@@ -11,24 +11,21 @@ class MainButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 5.h),
-      child: SizedBox(
-        height: 55.h,
-        child: TextButton(
-          style: TextButton.styleFrom(
-            backgroundColor: AppColors.mainBlue,
-            foregroundColor: Colors.white,
-            padding: EdgeInsets.symmetric(vertical: 14.h),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16.r),
-            ),
+    return SizedBox(
+      height: 55.h,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          backgroundColor: AppColors.mainBlue,
+          foregroundColor: Colors.white,
+          padding: EdgeInsets.symmetric(vertical: 14.h),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.r),
           ),
-          onPressed: onPressed,
-          child: Text(
-            label,
-            style: AppText.whiteSemi16,
-          ),
+        ),
+        onPressed: onPressed,
+        child: Text(
+          label,
+          style: AppText.whiteSemi16,
         ),
       ),
     );

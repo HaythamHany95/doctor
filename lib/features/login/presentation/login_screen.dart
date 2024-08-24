@@ -2,7 +2,7 @@ import 'package:doctor/core/theming/app_colors.dart';
 import 'package:doctor/core/theming/app_text.dart';
 import 'package:doctor/core/widgets/main_button.dart';
 import 'package:doctor/features/login/presentation/widgets/already_have_acc_text.dart';
-import 'package:doctor/features/login/presentation/widgets/auth_text_field.dart';
+import 'package:doctor/features/login/presentation/widgets/email_and_password.dart';
 import 'package:doctor/features/login/presentation/widgets/terms_condition_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,9 +15,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final formKey = GlobalKey<FormState>();
-  bool isSecure = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,32 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
                       style: AppText.greyReg14,
                     ),
-                    Form(
-                      key: formKey,
-                      child: Column(
-                        children: [
-                          const AuthTextField(hintText: "Email"),
-                          AuthTextField(
-                            hintText: "Password",
-                            isSecure: isSecure,
-                            suffixIcon: GestureDetector(
-                              onTap: () {
-                                setState(
-                                  () {
-                                    isSecure = !isSecure;
-                                  },
-                                );
-                              },
-                              child: Icon(
-                                isSecure
-                                    ? Icons.visibility_off
-                                    : Icons.visibility,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    EmailAndPassword(),
                     SizedBox(
                       height: 16.h,
                     ),

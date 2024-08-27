@@ -1,10 +1,14 @@
+import 'package:doctor/core/helpers/spacing.dart';
 import 'package:doctor/core/theming/app_colors.dart';
 import 'package:doctor/core/theming/app_text.dart';
 import 'package:doctor/core/widgets/main_button.dart';
+import 'package:doctor/features/login/data/models/login_request_body.dart';
+import 'package:doctor/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor/features/login/presentation/widgets/already_have_acc_text.dart';
 import 'package:doctor/features/login/presentation/widgets/email_and_password.dart';
 import 'package:doctor/features/login/presentation/widgets/terms_condition_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -37,30 +41,23 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: AppText.greyReg14,
                     ),
                     EmailAndPassword(),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    verticalSpace(16),
                     Text(
                       "Forgot Password?",
                       textAlign: TextAlign.end,
                       style:
                           AppText.greyReg12.copyWith(color: AppColors.mainBlue),
                     ),
-                    SizedBox(
-                      height: 41.h,
-                    ),
+                    verticalSpace(41),
                     MainButton(
                         onPressed: () {
-                          /// ToDo:Login functionality
+                          // ToDo:Login functionality
+                          validateThenLogin(context);
                         },
                         label: "Login"),
-                    SizedBox(
-                      height: 50.h,
-                    ),
+                    verticalSpace(50),
                     const TermsConditionText(),
-                    SizedBox(
-                      height: 20.h,
-                    ),
+                    verticalSpace(20),
                     const AlreadyHaveAccText()
                   ],
                 ),
@@ -70,5 +67,16 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+}
+
+void validateThenLogin(BuildContext context) {
+  if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+    context.read<LoginCubit>().login(
+          LoginRequestBody(
+            email: context.read<LoginCubit>().emailController.text,
+            password: context.read<LoginCubit>().passwordController.text,
+          ),
+        );
   }
 }

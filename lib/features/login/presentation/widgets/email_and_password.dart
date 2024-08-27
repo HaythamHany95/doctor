@@ -1,5 +1,7 @@
+import 'package:doctor/core/helpers/spacing.dart';
 import 'package:doctor/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor/features/login/presentation/widgets/auth_text_field.dart';
+import 'package:doctor/features/login/presentation/widgets/password_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,6 +14,13 @@ class EmailAndPassword extends StatefulWidget {
 
 class _EmailAndPasswordState extends State<EmailAndPassword> {
   bool isSecure = true;
+
+  bool hasLowerCase = false;
+  bool hasUpperCase = false;
+  bool hasNumber = false;
+  bool hasSpecialCharacter = false;
+  bool hasMinLength = false;
+
   late TextEditingController passwordController;
 
   @override
@@ -55,6 +64,14 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                 isSecure ? Icons.visibility_off : Icons.visibility,
               ),
             ),
+          ),
+          verticalSpace(24),
+          PasswordValidator(
+            hasLowerCase: hasLowerCase,
+            hasUpperCase: hasUpperCase,
+            hasNumber: hasNumber,
+            hasSpecialCharacter: hasSpecialCharacter,
+            hasMinLength: hasMinLength,
           ),
         ],
       ),

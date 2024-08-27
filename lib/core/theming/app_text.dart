@@ -21,22 +21,28 @@ class AppText {
     color: AppColors.mainBlue,
     fontFamily: 'Inter',
   );
+  static TextStyle darkBlueReg13 = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.darkBlue,
+    fontFamily: 'Inter',
+  );
   static TextStyle blackBold12 = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
-    color: AppColors.mainBlue,
+    color: AppColors.black,
     fontFamily: 'Inter',
   );
   static TextStyle blackReg14 = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
-    color: Colors.black,
+    color: AppColors.black,
     fontFamily: 'Inter',
   );
   static TextStyle blackMed14 = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
-    color: Colors.black,
+    color: AppColors.black,
     fontFamily: 'Inter',
   );
   static TextStyle greyMed14 = TextStyle(

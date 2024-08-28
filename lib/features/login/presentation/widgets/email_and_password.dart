@@ -1,3 +1,4 @@
+import 'package:doctor/core/helpers/app_regex.dart';
 import 'package:doctor/core/helpers/spacing.dart';
 import 'package:doctor/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor/features/login/presentation/widgets/auth_text_field.dart';
@@ -28,6 +29,21 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
     super.initState();
 
     passwordController = context.read<LoginCubit>().passwordController;
+
+    setUpPasswordControllerListener();
+  }
+
+  void setUpPasswordControllerListener() {
+    passwordController.addListener(() {
+      setState(() {
+        hasLowerCase = AppRegex.hasLowerCase(passwordController.text);
+        hasUpperCase = AppRegex.hasUpperCase(passwordController.text);
+        hasNumber = AppRegex.hasNumber(passwordController.text);
+        hasSpecialCharacter =
+            AppRegex.hasSpecialCharacter(passwordController.text);
+        hasMinLength = AppRegex.hasMinimumLength(passwordController.text);
+      });
+    });
   }
 
   @override
@@ -40,7 +56,9 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             hintText: "Email",
             controller: context.read<LoginCubit>().emailController,
             validator: (value) {
-              if (value == null || value.isEmpty) {
+              if (value == null ||
+                  value.isEmpty ||
+                  !AppRegex.isEmailValid(value)) {
                 return "Please enter a valid email";
               }
             },
@@ -76,5 +94,11 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    passwordController.dispose();
   }
 }

@@ -12,14 +12,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
                       style: AppText.greyReg14,
                     ),
-                    EmailAndPassword(),
+                    const EmailAndPassword(),
                     verticalSpace(16),
                     Text(
                       "Forgot Password?",

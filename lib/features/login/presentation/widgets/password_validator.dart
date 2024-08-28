@@ -51,7 +51,7 @@ Widget buildValidationRow(String text, bool hasValidation) {
           decoration: hasValidation ? TextDecoration.lineThrough : null,
           decorationColor: AppColors.green,
           decorationThickness: 2,
-          color: hasValidation ? AppColors.grey : AppColors.darkBlue,
+          color: hasValidation ? AppColors.lightGrey : AppColors.darkBlue,
         ),
       )
     ],

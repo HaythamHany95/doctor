@@ -6,6 +6,7 @@ import 'package:doctor/features/login/data/models/login_request_body.dart';
 import 'package:doctor/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor/features/login/presentation/widgets/already_have_acc_text.dart';
 import 'package:doctor/features/login/presentation/widgets/email_and_password.dart';
+import 'package:doctor/features/login/presentation/widgets/login_bloc_listener.dart';
 import 'package:doctor/features/login/presentation/widgets/terms_condition_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -58,7 +59,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     verticalSpace(50),
                     const TermsConditionText(),
                     verticalSpace(20),
-                    const AlreadyHaveAccText()
+                    const AlreadyHaveAccText(),
+                    const LoginBlocListener(),
                   ],
                 ),
               ),

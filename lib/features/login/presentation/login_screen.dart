@@ -2,9 +2,8 @@ import 'package:doctor/core/helpers/spacing.dart';
 import 'package:doctor/core/theming/app_colors.dart';
 import 'package:doctor/core/theming/app_text.dart';
 import 'package:doctor/core/widgets/main_button.dart';
-import 'package:doctor/features/login/data/models/login_request_body.dart';
 import 'package:doctor/features/login/logic/cubit/login_cubit.dart';
-import 'package:doctor/features/login/presentation/widgets/already_have_acc_text.dart';
+import 'package:doctor/features/login/presentation/widgets/dont_have_acc_text.dart';
 import 'package:doctor/features/login/presentation/widgets/email_and_password.dart';
 import 'package:doctor/features/login/presentation/widgets/login_bloc_listener.dart';
 import 'package:doctor/features/login/presentation/widgets/terms_condition_text.dart';
@@ -54,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                     verticalSpace(50),
                     const TermsConditionText(),
                     verticalSpace(20),
-                    const AlreadyHaveAccText(),
+                    const DontHaveAccText(),
                     const LoginBlocListener(),
                   ],
                 ),

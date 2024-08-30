@@ -15,6 +15,7 @@ class EmailAndPassword extends StatefulWidget {
 
 class _EmailAndPasswordState extends State<EmailAndPassword> {
   bool isSecure = true;
+  bool isValidationVisable = false;
 
   bool hasLowerCase = false;
   bool hasUpperCase = false;
@@ -36,6 +37,12 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
   void setUpPasswordControllerListener() {
     passwordController.addListener(() {
       setState(() {
+        if (passwordController.text.isNotEmpty) {
+          isValidationVisable = true;
+        } else {
+          isValidationVisable = false;
+        }
+
         hasLowerCase = AppRegex.hasLowerCase(passwordController.text);
         hasUpperCase = AppRegex.hasUpperCase(passwordController.text);
         hasNumber = AppRegex.hasNumber(passwordController.text);
@@ -67,14 +74,14 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             hintText: "Password",
             controller: context.read<LoginCubit>().passwordController,
             validator: (value) {
+              if (value != null) {
+                isValidationVisable = true;
+              } else {
+                isValidationVisable = false;
+              }
               if (value == null ||
                   value.isEmpty ||
-                  !AppRegex.isPasswordValid(value) ||
-                  !hasLowerCase ||
-                  !hasUpperCase ||
-                  !hasNumber ||
-                  !hasSpecialCharacter ||
-                  !hasMinLength) {
+                  !AppRegex.isPasswordValid(value)) {
                 return "Please enter a valid password";
               }
             },
@@ -91,12 +98,15 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             ),
           ),
           verticalSpace(24),
-          PasswordValidator(
-            hasLowerCase: hasLowerCase,
-            hasUpperCase: hasUpperCase,
-            hasNumber: hasNumber,
-            hasSpecialCharacter: hasSpecialCharacter,
-            hasMinLength: hasMinLength,
+          Visibility(
+            visible: isValidationVisable,
+            child: PasswordValidator(
+              hasLowerCase: hasLowerCase,
+              hasUpperCase: hasUpperCase,
+              hasNumber: hasNumber,
+              hasSpecialCharacter: hasSpecialCharacter,
+              hasMinLength: hasMinLength,
+            ),
           ),
         ],
       ),

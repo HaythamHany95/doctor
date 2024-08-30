@@ -3,6 +3,8 @@ import 'package:doctor/core/networking/api_service.dart';
 import 'package:doctor/core/networking/dio_factory.dart';
 import 'package:doctor/features/login/data/repository/login_repository.dart';
 import 'package:doctor/features/login/logic/cubit/login_cubit.dart';
+import 'package:doctor/features/register/data/repository/register_repository.dart';
+import 'package:doctor/features/register/logic/cubit/register_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -14,5 +16,10 @@ void setupGetIt() {
 
   // login repository & login cubit
   getIt.registerLazySingleton<LoginRepository>(() => LoginRepository(getIt()));
-  getIt.registerLazySingleton<LoginCubit>(() => LoginCubit(getIt()));
+  getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
+
+  // register repository & register cubit
+  getIt.registerLazySingleton<RegisterRepository>(
+      () => RegisterRepository(getIt()));
+  getIt.registerFactory<RegisterCubit>(() => RegisterCubit(getIt()));
 }

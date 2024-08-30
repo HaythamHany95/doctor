@@ -6,33 +6,44 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AuthTextField extends StatelessWidget {
   final String hintText;
   final bool? isSecure;
+  final int? maxLength;
+  final Widget? counter;
+  final TextStyle? counterStyle;
   final Widget? suffixIcon;
   final TextInputType? keyboardType;
   final TextEditingController? controller;
   final Function(String?) validator;
+  final Function(String?)? onChanged;
 
   const AuthTextField({
     required this.hintText,
-    this.keyboardType,
     this.isSecure = false,
+    this.maxLength,
+    this.counter,
+    this.counterStyle,
     this.suffixIcon,
+    this.keyboardType,
     this.controller,
     required this.validator,
+    this.onChanged,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 36.h),
+      padding: EdgeInsets.only(top: 15.h),
       child: TextFormField(
         controller: controller,
         validator: (value) => validator(value),
+        onChanged: onChanged,
         maxLines: 1,
+        maxLength: maxLength,
         obscureText: isSecure ?? false,
         style: AppText.blackMed14,
         keyboardType: keyboardType,
         decoration: InputDecoration(
+          counter: counter ?? const Offstage(),
           suffixIcon: suffixIcon,
           isDense: true,
           hintText: hintText,

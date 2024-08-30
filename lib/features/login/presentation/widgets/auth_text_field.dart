@@ -8,12 +8,16 @@ class AuthTextField extends StatelessWidget {
   final bool? isSecure;
   final Widget? suffixIcon;
   final TextInputType? keyboardType;
+  final TextEditingController? controller;
+  final Function(String?) validator;
 
   const AuthTextField({
     required this.hintText,
     this.keyboardType,
     this.isSecure = false,
     this.suffixIcon,
+    this.controller,
+    required this.validator,
     super.key,
   });
 
@@ -22,6 +26,8 @@ class AuthTextField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: 36.h),
       child: TextFormField(
+        controller: controller,
+        validator: (value) => validator(value),
         maxLines: 1,
         obscureText: isSecure ?? false,
         style: AppText.blackMed14,
@@ -51,12 +57,14 @@ class AuthTextField extends StatelessWidget {
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.sp),
             borderSide: const BorderSide(
+              width: 1.5,
               color: Colors.red,
             ),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.sp),
             borderSide: const BorderSide(
+              width: 1.5,
               color: Colors.red,
             ),
           ),

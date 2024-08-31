@@ -35,22 +35,22 @@ class LoginScreen extends StatelessWidget {
                       "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
                       style: AppText.greyReg14,
                     ),
+                    verticalSpace(10),
                     const EmailAndPassword(),
-                    verticalSpace(16),
                     Text(
                       "Forgot Password?",
                       textAlign: TextAlign.end,
                       style:
                           AppText.greyReg12.copyWith(color: AppColors.mainBlue),
                     ),
-                    verticalSpace(41),
+                    verticalSpace(30),
                     MainButton(
                         onPressed: () {
                           // ToDo:Login functionality
                           validateThenLogin(context);
                         },
                         label: "Login"),
-                    verticalSpace(50),
+                    verticalSpace(30),
                     const TermsConditionText(),
                     verticalSpace(20),
                     const DontHaveAccText(),

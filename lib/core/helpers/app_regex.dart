@@ -7,8 +7,13 @@ class AppRegex {
 
   static bool isPasswordValid(String password) {
     return RegExp(
-            r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
+            r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~_]).{8,}$')
         .hasMatch(password);
+  }
+
+  /// Egypt's phone numbers validation
+  static bool isPhoneValid(String phone) {
+    return RegExp(r'^(010|011|012|015)\d{7}$').hasMatch(phone);
   }
 
   static bool hasLowerCase(String password) {

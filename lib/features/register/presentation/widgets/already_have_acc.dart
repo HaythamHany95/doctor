@@ -4,8 +4,8 @@ import 'package:doctor/core/theming/app_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class DontHaveAccText extends StatelessWidget {
-  const DontHaveAccText({super.key});
+class AlreadyHaveAcc extends StatelessWidget {
+  const AlreadyHaveAcc({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +13,13 @@ class DontHaveAccText extends StatelessWidget {
       textAlign: TextAlign.center,
       text: TextSpan(
         children: [
-          TextSpan(text: 'Don\'t have an account?', style: AppText.blackReg14),
+          TextSpan(text: 'Already have an account?', style: AppText.blackReg14),
           TextSpan(
-              text: ' Sign Up',
+              text: ' Login',
               style: AppText.blueSemi14,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  context.pushReplacementNamed(Routes.registerScreen);
+                  context.pushReplacementNamed(Routes.loginScreen);
                 })
         ],
       ),

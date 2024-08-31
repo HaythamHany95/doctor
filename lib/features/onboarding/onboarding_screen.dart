@@ -3,7 +3,7 @@ import 'package:doctor/core/helpers/extensions.dart';
 import 'package:doctor/core/routing/routes.dart';
 import 'package:doctor/core/theming/app_text.dart';
 import 'package:doctor/core/widgets/main_button.dart';
-import 'package:doctor/features/onboarding/presentation/widgets/doctor_stack.dart';
+import 'package:doctor/features/onboarding/widgets/doctor_stack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';

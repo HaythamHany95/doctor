@@ -44,7 +44,7 @@ android {
         versionName = flutterVersionName
     }
 
-    flavorsDimensions "default"
+    flavorDimensions "default"
     productFlavors {
       production {
           dimension "default"

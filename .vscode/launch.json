@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Doctor Development",
+            "name": "DocDoc Development",
             "request": "launch",
             "type": "dart",
             "program": "lib/main_development.dart",
@@ -14,7 +14,7 @@
             ]
         },
         {
-            "name": "Doctor Production",
+            "name": "DocDoc Production",
             "request": "launch",
             "type": "dart",
             "program": "lib/main_production.dart",

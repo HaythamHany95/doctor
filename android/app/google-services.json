@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "396089466108",
+    "project_id": "docdoc-hh95",
+    "storage_bucket": "docdoc-hh95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396089466108:android:441c82bdfc56ca67f34b79",
+        "android_client_info": {
+          "package_name": "com.example.doctor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAukLUXwp5zNSLG-jOpWXg0Ex4d-iUszjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

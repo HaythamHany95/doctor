@@ -51,6 +51,12 @@ class AppText {
     color: AppColors.black,
     fontFamily: 'Inter',
   );
+  static TextStyle blackSemi18 = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.black,
+    fontFamily: 'Inter',
+  );
 
   static TextStyle blackBold18 = TextStyle(
     fontSize: 18.sp,

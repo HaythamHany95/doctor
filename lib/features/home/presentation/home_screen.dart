@@ -1,3 +1,4 @@
+import 'package:doctor/features/home/presentation/widgets/doctor_blue_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,13 +11,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        width: double.infinity,
-        padding: EdgeInsets.fromLTRB(16.w, 40.h, 16.w, 10.h),
-        child: const Column(
-          children: [
-            HomeTopBar(),
-          ],
+      body: SafeArea(
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 28.h),
+          child: const Column(
+            children: [HomeTopBar(), HomeBlueCard()],
+          ),
         ),
       ),
     );

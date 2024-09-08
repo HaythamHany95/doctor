@@ -21,6 +21,12 @@ class AppText {
     color: AppColors.mainBlue,
     fontFamily: 'Inter',
   );
+  static TextStyle blueReg12 = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.mainBlue,
+    fontFamily: 'Inter',
+  );
   static TextStyle darkBlueReg13 = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeight.w400,
@@ -75,6 +81,13 @@ class AppText {
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.grey,
+    fontFamily: 'Inter',
+  );
+
+  static TextStyle whiteMed18 = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w500,
+    color: Colors.white,
     fontFamily: 'Inter',
   );
 

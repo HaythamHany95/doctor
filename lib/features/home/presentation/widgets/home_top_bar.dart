@@ -1,3 +1,4 @@
+import 'package:doctor/core/helpers/app_assets.dart';
 import 'package:doctor/core/theming/app_colors.dart';
 import 'package:doctor/core/theming/app_text.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ class HomeTopBar extends StatelessWidget {
         CircleAvatar(
           radius: 25.r,
           backgroundColor: AppColors.morelighterGrey,
-          child: SvgPicture.asset('assets/svgs/notification_icon.svg'),
+          child: SvgPicture.asset(AppAssets.notificationIcon),
         )
       ],
     );

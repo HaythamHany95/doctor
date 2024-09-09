@@ -1,5 +1,6 @@
 import 'package:doctor/core/helpers/spacing.dart';
 import 'package:doctor/features/home/presentation/widgets/doctor_blue_container.dart';
+import 'package:doctor/features/home/presentation/widgets/doctors_list_view.dart';
 import 'package:doctor/features/home/presentation/widgets/doctors_specialities_listview.dart';
 import 'package:doctor/features/home/presentation/widgets/doctors_specialities_row.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ class HomeScreen extends StatelessWidget {
               const DoctorsSpecialitiesRow(),
               verticalSpace(8),
               const DoctorsSpecialitiesListView(),
+              const DoctorsListView()
             ],
           ),
         ),

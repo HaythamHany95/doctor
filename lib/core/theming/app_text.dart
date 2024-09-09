@@ -83,6 +83,12 @@ class AppText {
     color: AppColors.grey,
     fontFamily: 'Inter',
   );
+  static TextStyle greyMed12 = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.grey,
+    fontFamily: 'Inter',
+  );
   static TextStyle greyReg14 = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,

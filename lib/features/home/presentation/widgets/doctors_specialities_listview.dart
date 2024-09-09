@@ -18,25 +18,31 @@ class DoctorsSpecialitiesListView extends StatelessWidget {
         itemCount: 5,
         itemBuilder: (context, i) {
           return Padding(
-            padding: EdgeInsetsDirectional.only(start: i == 0 ? 0 : 24.w),
+            padding: EdgeInsetsDirectional.only(start: i == 0 ? 0 : 10.w),
             child: Column(
               children: [
                 CircleAvatar(
-                  radius: 39.r,
+                  radius: 30.r,
                   backgroundColor: AppColors.morelighterGrey,
                   child: SvgPicture.asset(
                     AppAssets.notificationIcon,
-                    height: 40.h,
-                    width: 40.w,
+                    height: 35.h,
+                    width: 35.w,
                   ),
                 ),
                 verticalSpace(8),
                 Center(
-                  child: Text(
-                    'Speciality $i',
-                    maxLines: 2,
-                    textAlign: TextAlign.center,
-                    style: AppText.blackReg14,
+                  child: Container(
+                    constraints: BoxConstraints(
+                      maxWidth: 80.w,
+                    ),
+                    child: Text(
+                      'Speciality ${i + 1}',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: AppText.blackReg14,
+                    ),
                   ),
                 ),
               ],

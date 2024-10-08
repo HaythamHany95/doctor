@@ -10,7 +10,7 @@ part 'api_service.g.dart';
 
 @RestApi(baseUrl: ApiEndPoints.baseUrl)
 abstract class ApiService {
-  factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
+  factory ApiService(Dio dio) = _ApiService;
 
   @POST(ApiEndPoints.login)
   Future<LoginResponse> login(
